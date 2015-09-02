@@ -11,12 +11,10 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var path = require('path');
 
-
 var templateSettings = {
     evaluate: /\/\*\:([\s\S]+?)\:\*\//g,
     interpolate: /\/\*\:=([\s\S]+?)\:\*\//g
 };
-
 
 gulp.task('dev', ['watch', 'build']);
 
@@ -32,7 +30,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('build', ['clean'], function (done) {
-    runSequence('lint', 'colrizr.js', 'colrizr.bundled.js', 'minify', done);
+    runSequence('lint', 'colrizr.js', 'minify', done);
 });
 
 gulp.task('clean', function (done) {
@@ -68,50 +66,6 @@ gulp.task('colrizr.js', function (done) {
                 .pipe(template(templateData, templateSettings))
                 .pipe(gulp.dest('dist/'))
                 .on('end', done);
-
-        });
-
-});
-gulp.task('colrizr.bundled.js', function (done) {
-
-    var templateData = {
-        spectrum: {}
-    };
-
-    gulp.src('bower_components/spectrum/spectrum.css')
-        .pipe(minifyCSS({
-            cache: false,
-            keepSpecialComments: 0,
-            keepBreaks: false,
-            compatibility: 'ie7'
-        }))
-        .pipe(map(function (contents, filename) {
-            templateData.spectrum.css = contents.toString().trim().replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-        }))
-        .on('end', function () {
-
-            gulp.src([
-                'bower_components/jquery/dist/jquery.js',
-                'bower_components/spectrum/spectrum.js',
-                'dist/colrizr.js'
-            ])
-                .pipe(map(function (contents, filename) {
-                    if (path.basename(filename) === 'jquery.js') {
-                        templateData.jQuery = contents.toString().trim();
-                    } else if (path.basename(filename) === 'spectrum.js') {
-                        templateData.spectrum.js = contents.toString().trim();
-                    } else if (path.basename(filename) === 'colrizr.js') {
-                        templateData.colrizr = contents.toString().trim();
-                    }
-                }))
-                .on('end', function () {
-
-                    gulp.src('src/colrizr.bundled.js')
-                        .pipe(template(templateData, templateSettings))
-                        .pipe(gulp.dest('dist/'))
-                        .on('end', done);
-
-                });
 
         });
 
