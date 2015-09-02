@@ -1,0 +1,21 @@
+{
+  "name": "colrizr",
+  "version": "1.0.0",
+  "authors": [
+    "Adrian Kremer <a.kr3mer@googlemail.com>"
+  ],
+  "description": "colorize images like a boss.",
+  "main": "dist/colrizr",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "colorize",
+    "colorpicker"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "spectrum": "~1.7.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cAAe;EACb,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,IAAI;EACb,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,MAAM",
+"sources": ["colrizr.scss"],
+"names": [],
+"file": "colrizr.css"
+}
