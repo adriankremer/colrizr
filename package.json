@@ -1,6 +1,6 @@
 {
   "name": "colrizr",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "colorize images like a boss.",
   "main": "dist/colrizr.js",
   "scripts": {
