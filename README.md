@@ -1,6 +1,6 @@
 # colrizr
 
-a great way to colorize images
+A great way to colorize images. Developed for touch and mouse devices.
 
 ## NPM
 
@@ -10,7 +10,15 @@ a great way to colorize images
 
 `bower install colrizr`
 
+
+
 ## Usage
+
+## Implementation
+
+```html
+<script type="text/javascript" src="../src/colrizr.js"></script>
+```
 
 ```html
 <img id="colrizr" src="yourimage.png" />
