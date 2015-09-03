@@ -1,10 +1,6 @@
 # colrizr
 
-<<<<<<< HEAD
 A great way to colorize images. Developed for touch and mouse devices.
-=======
-a great way to colorize images. maintained for touch and mouse devices.
->>>>>>> origin/master
 
 ## NPM
 
